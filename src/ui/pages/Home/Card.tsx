@@ -5,6 +5,7 @@ import { Badge } from "../../components/Badge";
 import { BiMap, BiTimeFive, BiDownArrowCircle } from "react-icons/bi";
 import { AiOutlineWarning } from "react-icons/ai";
 import { Job as JobModel } from '../../../models/Job'
+import { Metadata } from "../../components/Metadata";
 
 export const Card: React.FC<Props> = (props) => {
     const job = props.job
@@ -12,16 +13,11 @@ export const Card: React.FC<Props> = (props) => {
         <Content>
             <Body>
                 <Title>{job.company}</Title>
-                <Job>
-                    <BiDownArrowCircle />
-                    {job.position} <br />
-                    <BiTimeFive />
-                    {job.time} <br />
-                    <BiMap />
-                    {job.place}
-                </Job>
+                <Metadata icon={<BiDownArrowCircle />} content={job.position} />
+                <Metadata icon={<BiTimeFive />} content={job.time} />
+                <Metadata icon={<BiMap />} content={job.place} />
                 <Description>{job.description}</Description>
-                <Job><AiOutlineWarning />Requisitos</Job>
+                <Metadata icon={<AiOutlineWarning />} content="Requisitos" />
                 <Requirements>
                     {
                         job.requirements.map(req => <Badge title={req} key={req} />)
@@ -58,13 +54,6 @@ const Requirements = styled.div`
     margin: 5px auto;
 `;
 
-const Job = styled.p`
-    font-size: x-small;
-    font-weight: 300;
-    color: #8d8c8c;
-    padding: auto;
-`;
-
 const Description = styled.p`
     text-align: justify;
 `;
@@ -80,6 +69,7 @@ const Apply = styled.button`
   height: fit-content;
   text-transform: uppercase;
   width: 100%;
+  margin-top: 20px;
   align-self: center;
   color: ${styles.colors.white};
   background-color: ${styles.colors.alternative};
