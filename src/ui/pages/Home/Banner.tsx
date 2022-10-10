@@ -13,6 +13,7 @@ export const Banner: React.FC = () => {
 const Content = styled.div`
   display: flex;
   position: sticky;
+  top: 10px;
   background-color: ${styles.colors.primary};
   padding: 0.25em 1em;
   border-radius: 20px;
