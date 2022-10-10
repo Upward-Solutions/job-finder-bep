@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import { styles } from "../../styles";
-import { Card } from "./Card";
+import styled from "styled-components"
+import { Card } from "./Card"
 
 export const Jobs: React.FC = () => {
     return (
