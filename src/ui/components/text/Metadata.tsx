@@ -22,6 +22,7 @@ const Text = styled.p`
     color: #8d8c8c;
     padding: auto;
     margin: 2px 0;
+    font-family: 'Robot';
 `;
 
 const Icon = styled.p`
@@ -30,6 +31,7 @@ const Icon = styled.p`
     color: #8d8c8c;
     padding: auto;
     margin: 2px 0;
+    font-family: 'Robot';
 `;
 
 interface Props {

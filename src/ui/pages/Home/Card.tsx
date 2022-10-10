@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { styles } from "../../styles";
 import React from "react";
-import { Badge } from "../../components/Badge";
+import { Badge } from "../../components/text/Badge";
 import { BiMap, BiTimeFive, BiDownArrowCircle } from "react-icons/bi";
 import { AiOutlineWarning } from "react-icons/ai";
 import { Job as JobModel } from '../../../models/Job'
-import { Metadata } from "../../components/Metadata";
+import { Metadata } from "../../components/text/Metadata";
 
 export const Card: React.FC<Props> = (props) => {
     const job = props.job
@@ -56,10 +56,12 @@ const Requirements = styled.div`
 
 const Description = styled.p`
     text-align: justify;
+    font-family: 'Robot';
 `;
 
 const Title = styled.h1`
     margin: 0 auto 10px;
+    font-family: 'Robot';
 `;
 
 const Apply = styled.button`

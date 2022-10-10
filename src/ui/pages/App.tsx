@@ -1,7 +1,7 @@
 import React from 'react'
-import { Banner } from './Home/Banner';
-import { Footer } from './Home/Footer';
-import { Jobs } from './Home/Jobs';
+import { Banner } from './Home/Banner'
+import { Footer } from './Home/Footer'
+import { Jobs } from './Home/Jobs'
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       <Jobs />
       <Footer />
     </>
-  );
+  )
 }
 
 
-export default App;
+export default App

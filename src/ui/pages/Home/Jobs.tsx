@@ -6,7 +6,7 @@ import { jobsExamples } from './jobsExamples'
 export const Jobs: React.FC = () => {
     return (
         <Content>
-            {jobsExamples.map(job => <Card key={job.description} job={job}/>)}
+            {jobsExamples.map((job, idx) => <Card key={idx} job={job}/>)}
         </Content>
     )
 }

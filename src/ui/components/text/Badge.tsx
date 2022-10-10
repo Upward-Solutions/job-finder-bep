@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components";
-import { styles } from '../styles'
+import { styles } from '../../styles'
 
 export const Badge: React.FC<Props> = (props) => {
     return <Text>{props.title}</Text>

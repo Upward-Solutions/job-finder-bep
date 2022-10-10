@@ -13,8 +13,7 @@ export const Banner: React.FC = () => {
 
 const Content = styled.div`
   display: flex;
-  position: sticky;
-  top: 10px;
+  margin: 20px 0;
   background-color: ${styles.colors.primary};
   padding: 0.25em 1em;
   border-radius: 20px;
@@ -26,6 +25,7 @@ const Title = styled.h1`
   color: ${styles.colors.white};
   font-size: x-large;
   font-weight: 500;
+  font-family: 'Robot';
 `;
 
 const Login = styled.button`
