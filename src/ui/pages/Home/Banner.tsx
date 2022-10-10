@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 import { styles } from "../../styles";
 
 export const Banner: React.FC = () => {

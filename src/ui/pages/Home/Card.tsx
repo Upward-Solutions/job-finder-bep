@@ -1,19 +1,32 @@
 import styled from "styled-components";
 import { styles } from "../../styles";
+import React from "react";
+import { Badge } from "../../components/Badge";
+import { BiMap, BiTimeFive, BiDownArrowCircle } from "react-icons/bi";
+import { AiOutlineWarning } from "react-icons/ai";
+import { Job as JobModel } from '../../../models/Job'
 
-export const Card: React.FC = () => {
+export const Card: React.FC<Props> = (props) => {
+    const job = props.job
     return (
         <Content>
             <Body>
-                <Title>APadeA Asociación Argentina de Padres de Autistas</Title>
-                <Job>Integración escolar</Job>
-                <Description>
-                    Búsqueda de profesionales independientes para el Área de Acompañamiento Escolar.
-                    -Estudiantes avanzados con =/+ del 80% de la carrera aprobada o profesionales recibidos
-                    en Psicología/Psicopedagogía o Fonoaudiología. -Profesor Especial o afines
-                    con experiencia en terapias Cognitivo Conductual con título. IMPORTANTE:
-                    Precisa curso AT solo en GBA. Zonas CABA y GBA (Zonas Norte, Oeste y Sur). Turnos mañana y tarde.
-                </Description>
+                <Title>{job.company}</Title>
+                <Job>
+                    <BiDownArrowCircle />
+                    {job.position} <br />
+                    <BiTimeFive />
+                    {job.time} <br />
+                    <BiMap />
+                    {job.place}
+                </Job>
+                <Description>{job.description}</Description>
+                <Job><AiOutlineWarning />Requisitos</Job>
+                <Requirements>
+                    {
+                        job.requirements.map(req => <Badge title={req} key={req} />)
+                    }
+                </Requirements>
             </Body>
             <Apply>Postularme</Apply>
         </Content>
@@ -39,10 +52,17 @@ const Content = styled.div`
 const Body = styled.div`
 `;
 
+const Requirements = styled.div`
+    display: flex;
+    gap: 5px;
+    margin: 5px auto;
+`;
+
 const Job = styled.p`
     font-size: x-small;
     font-weight: 300;
     color: #8d8c8c;
+    padding: auto;
 `;
 
 const Description = styled.p`
@@ -50,7 +70,7 @@ const Description = styled.p`
 `;
 
 const Title = styled.h1`
-    margin-bottom: 10px;
+    margin: 0 auto 10px;
 `;
 
 const Apply = styled.button`
@@ -58,6 +78,7 @@ const Apply = styled.button`
   padding: 10px;
   border: none;
   height: fit-content;
+  text-transform: uppercase;
   width: 100%;
   align-self: center;
   color: ${styles.colors.white};
@@ -69,3 +90,7 @@ const Apply = styled.button`
     background-color: #492b59;
   }
 `;
+
+interface Props {
+    job: JobModel;
+}

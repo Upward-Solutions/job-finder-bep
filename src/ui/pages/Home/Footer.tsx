@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import footerBanner from './footer_2.png'
+import React from "react"
 
 export const Footer: React.FC = () => {
     return <Content>
